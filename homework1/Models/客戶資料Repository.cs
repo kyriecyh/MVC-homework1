@@ -68,16 +68,15 @@ namespace homework1.Models
             return result;
         }
 
-        public string Delete(int id)
+        public void Delete(int id)
         {
             var data = Find(id);
             if(data != null)
             {
                 data.IsDelete = true;
                 this.UnitOfWork.Context.Entry(data).State = EntityState.Modified;
-                this.UnitOfWork.Commit();
+                //this.UnitOfWork.Commit();
             }
-            return "success";
         }
     }
 

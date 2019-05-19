@@ -127,6 +127,7 @@ namespace homework1.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             repo.Delete(id);
+            repo.UnitOfWork.Commit();
             return RedirectToAction("Index");
         }
 
